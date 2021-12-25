@@ -89,7 +89,7 @@ def strategy_engine(price_df, strategy, total_account, risk_per_trade, total_acc
     if close_positions==True:
         for k in trading_history[trading_history["Closing Price"].isna()].index:
             trading_history["Closing Price"].iloc[k] = price_df["Close"].iloc[-1]
-            trading_history["Closed on"].iloc[k] = price_df.index[k]
+            trading_history["Closed on"].iloc[k] = price_df.index[-1]
             if trading_history["Action"].iloc[k]=="Buy":
                 trading_history["Profit/Loss"].iloc[k] = (trading_history["Closing Price"].iloc[k]*trading_history["Number of Shares"].iloc[k]
                                                          -trading_history["Total Investment"].iloc[k])
