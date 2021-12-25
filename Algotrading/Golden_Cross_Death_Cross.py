@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-price_df = pd.read_csv(r"AAPL_data.csv", index_col="Date")
+price_df = pd.read_csv(r"Trading_Strategies\Algotrading\AAPL_data.csv", index_col="Date")
 price_df.index.name = None
 
 def plot_golden_cross_death_cross(df):
